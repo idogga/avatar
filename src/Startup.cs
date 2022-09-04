@@ -37,6 +37,7 @@ public class Startup
         services.AddHttpContextAccessor();
         services.AddCors();
         services.Configure<RealFileConfiguration>(Configuration.GetSection("File"));
+        services.Configure<AvatarsConfiguration>(Configuration.GetSection("Avatar"));
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)

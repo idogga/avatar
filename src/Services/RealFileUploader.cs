@@ -25,6 +25,23 @@ public class RealFileUploader
         this.appEnvironment = appEnvironment;
     }
 
+    public Task CheckFileExists(Guid id, string key)
+    {
+        if (string.IsNullOrEmpty(pathConfiguration.PathToOriginals))
+        {
+            throw new BadConfigurationException("File", "Cant't find Path to originals");
+        }
+
+        var path = GetFolderPath();
+        var fileName = $"{id.ToString()}-{key}";
+        if (Directory.GetFiles(path).Any(f => f.Contains(id.ToString())))
+        {
+            throw new FileExistException();
+        }
+
+        return Task.CompletedTask;
+    }
+
     public Task CheckFileExists(Guid id)
     {
         if (string.IsNullOrEmpty(pathConfiguration.PathToOriginals))

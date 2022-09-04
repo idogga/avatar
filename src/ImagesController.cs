@@ -13,9 +13,11 @@ public class ImagesController : ControllerBase
     public async Task Save(
         Guid id,
         [FromForm] A formFile,
-        [FromServices] FileService fileService)
+        [FromServices] FileService fileService,
+        [FromServices] ImageChangingService imageChangingService)
     {
         await fileService.SaveOriginals(id, formFile.FormFile);
+        await imageChangingService.ChangeImage(id, formFile);
     }
 
     public record A

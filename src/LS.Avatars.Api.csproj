@@ -14,14 +14,15 @@
 		<DocumentationFile>bin\Debug\LS.Avatars.Api.xml</DocumentationFile>
 		<OutputPath>bin\Debug\</OutputPath>
 	</PropertyGroup>
-	<PropertyGroup Condition=" '$(RunConfiguration)' == 'Api' "/>
+	<PropertyGroup Condition=" '$(RunConfiguration)' == 'Api' " />
 	<ItemGroup>
-		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2"/>
+		<PackageReference Include="Aspose.Imaging" Version="22.9.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
 		<PackageReference Include="SecurityCodeScan.VS2019" Version="5.1.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1"/>
-		<PackageReference Include="xunit.assert" Version="2.4.1"/>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
+		<PackageReference Include="xunit.assert" Version="2.4.1" />
 	</ItemGroup>
 </Project>

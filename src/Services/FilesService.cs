@@ -23,4 +23,10 @@ public class FileService
 
         await fileUploader.UploadFile(id, formFile);
     }
+
+    public async Task SaveDuplicate(Guid id, string key)
+    {
+        await fileUploader.CheckFileExists(id);
+        await fileUploader.CheckFileExists(id, key);
+    }
 }
